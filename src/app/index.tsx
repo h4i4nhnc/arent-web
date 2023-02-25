@@ -12,9 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage } from './pages/Home/Loadable';
-import { RecordPage } from './pages/Record/Loadable';
-import { ArticlePage } from './pages/Article/Loadable';
+import { HomePage, RecordPage, ArticlePage } from './pages/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 

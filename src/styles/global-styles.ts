@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import './color-palette.scss';
 
 export const GlobalStyle = createGlobalStyle`
   html,
