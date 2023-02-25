@@ -11,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Noto SansCJK JP', Arial, sans-serif;
+
+    .digit {
+      font-family: 'Inter', Arial, sans-serif;
+    }
   }
 
   #root {

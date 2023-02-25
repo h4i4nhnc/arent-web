@@ -119,5 +119,8 @@
         "statements": 90
       }
     }
+  },
+  "compilerOptions": {
+    "baseUrl": "src"
   }
 }
