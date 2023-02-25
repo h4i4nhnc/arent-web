@@ -14,3 +14,21 @@
   src: local('Noto SansCJK JP'), url(../../public/fonts/japanese/NotoSansJP-Black.otf) format('opentype');
   font-weight: 900;
 }
+
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/inter/Inter-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/inter/Inter-Black.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/inter/Inter-Bold.ttf) format('truetype');
+  font-weight: 900;
+}
