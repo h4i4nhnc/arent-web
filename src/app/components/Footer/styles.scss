@@ -1,0 +1,22 @@
+.footer {
+  background-color: var(--dark);
+  height: 128px;
+  width: 100%;
+
+  .footer-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 160px;
+    margin-right: 160px;
+    list-style-type: none;
+    height: 100%;
+
+    .tag-item {
+      color: var(--light);
+      font-size: 11px;
+      cursor: pointer;
+      margin-right: 45px;
+    }
+  }
+}
