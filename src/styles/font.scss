@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Noto SansCJK JP';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/japanese/NotoSansJP-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto SansCJK JP';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/japanese/NotoSansJP-Bold.otf) format('opentype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Noto SansCJK JP';
+  src: local('Noto SansCJK JP'), url(../../public/fonts/japanese/NotoSansJP-Black.otf) format('opentype');
+  font-weight: 900;
+}

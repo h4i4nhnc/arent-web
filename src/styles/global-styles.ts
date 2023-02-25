@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import './color-palette.scss';
+import './font.scss';
 
 export const GlobalStyle = createGlobalStyle`
   html,
@@ -9,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Noto SansCJK JP', Arial, sans-serif;
   }
 
   #root {
