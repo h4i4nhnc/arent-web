@@ -1,6 +1,6 @@
 import { dinnerData } from 'dummy/dinnerData';
 
 export const fetchPlatesData = (page: number) => {
-  // call axios to return data
+  // TODO: call axios to return data instead of dummy
   return dinnerData;
 };

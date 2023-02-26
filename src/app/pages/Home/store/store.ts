@@ -23,9 +23,6 @@ export const homeSlice = createSlice({
 });
 
 export const { fetchPlates } = homeSlice.actions;
-
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.counter.value;
 export const plates = (state: RootState) => state.home.plates;
 
 export default homeSlice.reducer;
