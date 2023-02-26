@@ -35,8 +35,12 @@ export const SubMenu = () => {
 
   return (
     <ul className="sub-menu-container">
-      {listItems.map(item => (
-        <li onClick={() => goToUrl(item.url)} className="sub-menu-item">
+      {listItems.map((item, index) => (
+        <li
+          key={index}
+          onClick={() => goToUrl(item.url)}
+          className="sub-menu-item"
+        >
           {item.text}
         </li>
       ))}

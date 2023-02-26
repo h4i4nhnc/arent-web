@@ -36,8 +36,8 @@ export const Footer = () => {
   return (
     <div className="footer">
       <ul className="footer-link">
-        {footerTags.map(tag => (
-          <li onClick={() => goToUrl(tag.url)} className="tag-item">
+        {footerTags.map((tag, index) => (
+          <li key={index} onClick={() => goToUrl(tag.url)} className="tag-item">
             {tag.text}
           </li>
         ))}

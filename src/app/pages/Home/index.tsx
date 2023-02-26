@@ -7,12 +7,30 @@ import { LineChart } from 'app/components/Chart/LineChart';
 import { Banner } from './Banner';
 import { Row, Col } from 'antd';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
+import { FilterDinner } from './FilterDinner';
+import { ListPlate } from './ListPlate';
+import { useState } from 'react';
 
 export function HomePage() {
   const bannerData = {
     bgr: mainPhoto,
     date: '05/21',
     percent: 75,
+  };
+
+  const [categories, setCategories] = useState<Array<string>>([
+    'morning',
+    'lunch',
+    'dinner',
+    'snack',
+  ]);
+
+  const filterCategories = (category: string) => {
+    if (categories.includes(category)) {
+      setCategories(categories.filter(x => x !== category));
+    } else {
+      setCategories([...categories, category]);
+    }
   };
 
   return (
@@ -34,6 +52,8 @@ export function HomePage() {
           <LineChart />
         </Col>
       </Row>
+      <FilterDinner categories={categories} onSetCategory={filterCategories} />
+      <ListPlate categories={categories} />
       <Footer />
     </>
   );

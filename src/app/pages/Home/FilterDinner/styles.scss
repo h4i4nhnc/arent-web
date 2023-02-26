@@ -1,0 +1,16 @@
+.dinner-container {
+  margin: 25px 160px;
+
+  .dinner {
+    display: flex;
+    justify-content: space-around;
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .category-active {
+    border: 2px solid var(--primary-400);
+    border-radius: 50%;
+  }
+}

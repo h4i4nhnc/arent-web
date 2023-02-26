@@ -10,7 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { LineChartData } from 'app/dummy/chartData';
+import { LineChartData } from 'dummy/chartData';
 
 ChartJS.register(
   CategoryScale,

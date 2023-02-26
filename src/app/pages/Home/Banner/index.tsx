@@ -8,8 +8,9 @@ export const Banner = (props: {
   percent: number;
 }) => {
   const { img, date, percent } = props;
-  const leftPercent = ((100 - percent) * 360) / 100;
-  const percentDeg = (percent * 360) / 100;
+  // TODO calculate circle percent to deg
+  // const leftPercent = ((100 - percent) * 360) / 100;
+  // const percentDeg = (percent * 360) / 100;
 
   return (
     <div
@@ -22,15 +23,18 @@ export const Banner = (props: {
     >
       <div className="content">
         <div
+          // TODO draw circle part by canvas
+          // http://www.html5canvastutorials.com/tutorials/html5-canvas-circles/
+          // http://jsfiddle.net/rpz15web/
           className={cx(
             'arc',
             css`
-              border-color: transparent var(--light) var(--light) var(--light);
-              -webkit-transform: rotate(${percentDeg}deg);
-              -moz-transform: rotate(${percentDeg}deg);
-              -ms-transform: rotate(${percentDeg}deg);
-              -o-transform: rotate(${percentDeg}deg);
-              transform: rotate(${percentDeg}deg);
+              border-color: transparent transparent;
+              -webkit-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              -o-transform: rotate(0deg);
+              transform: rotate(0deg);
               box-shadow: 0px 0px 0px transparent;
             `,
           )}
@@ -40,11 +44,11 @@ export const Banner = (props: {
             'arc',
             css`
               border-color: transparent var(--light) var(--light) var(--light);
-              -webkit-transform: rotate(${leftPercent}deg);
-              -moz-transform: rotate(${leftPercent}deg);
-              -ms-transform: rotate(${leftPercent}deg);
-              -o-transform: rotate(${leftPercent}deg);
-              transform: rotate(${leftPercent}deg);
+              -webkit-transform: rotate(-110deg);
+              -moz-transform: rotate(-110deg);
+              -ms-transform: rotate(-110deg);
+              -o-transform: rotate(-110deg);
+              transform: rotate(-110deg);
               box-shadow: 0px 0px 0px transparent;
             `,
           )}
