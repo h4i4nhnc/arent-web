@@ -44,12 +44,12 @@ export function HomePage() {
     return plates.filter(item => categories.includes(item.category));
   }, [categories, plates]);
   const loadMore = () => {
-    setPage(page + 1);
     fetchPlatesData();
   };
 
   const fetchPlatesData = useCallback(() => {
-    return dispatch(fetchPlates(page));
+    setPage(page + 1);
+    return dispatch(fetchPlates(page + 1));
   }, [dispatch, page]);
 
   useEffect(() => {

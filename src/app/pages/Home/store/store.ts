@@ -16,7 +16,7 @@ export const homeSlice = createSlice({
   reducers: {
     fetchPlates: (state, action: PayloadAction<number>) => {
       const data = fetchPlatesData(action.payload);
-      console.log('fetchPlates:', action.payload);
+      console.log('fetchPlates:', action);
       state.plates = [...state.plates, ...data];
     },
   },
