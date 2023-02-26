@@ -11,7 +11,7 @@
 
 - [x] header
 - [x] footer
-- [x] home page: load more, scroll to top, routing to other page
+- [x] home page: filter by category, load more, scroll to top, routing to other page
 
 #### TODO
 

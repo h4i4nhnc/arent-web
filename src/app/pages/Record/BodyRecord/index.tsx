@@ -11,7 +11,7 @@ export const BodyRecord = (props: {
   url: string;
   image: string;
 }) => {
-  const { title, description, url, image } = props;
+  const { title, description, image } = props;
 
   const getImgByType = (img: string) => {
     switch (img) {
