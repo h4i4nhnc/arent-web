@@ -9,6 +9,10 @@
     margin-left: 160px;
     margin-right: 160px;
 
+    .logo {
+      cursor: pointer;
+    }
+
     .action-list {
       display: flex;
       justify-content: flex-start;
