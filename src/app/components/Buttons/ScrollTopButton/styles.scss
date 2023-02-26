@@ -1,0 +1,11 @@
+.scroll-to-top {
+  position: fixed;
+  top: 200px;
+  right: 96px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.hide {
+  display: none;
+}

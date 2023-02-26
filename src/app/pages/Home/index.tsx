@@ -9,6 +9,7 @@ import { Row, Col } from 'antd';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
 import { FilterDinner } from './components/FilterDinner';
 import { ListPlate } from './components/ListPlate';
+import { ScrollTopButton } from 'app/components/Buttons/ScrollTopButton';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { fetchPlates } from './store/store';
@@ -85,6 +86,7 @@ export function HomePage() {
         onLoadMore={loadMore}
       />
       {/* TODO: show loading when fetching api */}
+      <ScrollTopButton />
       <Footer />
     </>
   );
