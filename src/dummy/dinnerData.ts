@@ -1,4 +1,4 @@
-export const dinnerData = [
+export const dinnerData: Array<any> = [
   {
     id: 1,
     category: 'morning',

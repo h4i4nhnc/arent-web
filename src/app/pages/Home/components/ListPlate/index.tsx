@@ -1,12 +1,15 @@
 import * as React from 'react';
 import './styles.scss';
 import { Row, Col } from 'antd';
-import { dinnerData } from 'dummy/dinnerData';
 import { cx, css } from '@emotion/css';
 import { Button } from 'app/components/Buttons/Button';
 
-export const ListPlate = (props: { categories: Array<string> }) => {
-  const { categories } = props;
+export const ListPlate = (props: {
+  categories: Array<string>;
+  dinnerData: Array<any>;
+  onLoadMore: Function;
+}) => {
+  const { categories, dinnerData, onLoadMore } = props;
   const filtered = dinnerData.filter(dish =>
     categories.includes(dish.category),
   );
@@ -34,7 +37,9 @@ export const ListPlate = (props: { categories: Array<string> }) => {
         ))}
       </Row>
       <Row>
-        <Button className="load-more">記録をもっと見る</Button>
+        <Button className="load-more" onClick={() => onLoadMore()}>
+          記録をもっと見る
+        </Button>
       </Row>
     </div>
   );

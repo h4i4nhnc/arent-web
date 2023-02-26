@@ -4,12 +4,14 @@ import './styles.scss';
 import { Header } from 'app//components/Header/Loadable';
 import { Footer } from 'app/components/Footer/Loadable';
 import { LineChart } from 'app/components/Chart/LineChart';
-import { Banner } from './Banner';
+import { Banner } from './components/Banner';
 import { Row, Col } from 'antd';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
-import { FilterDinner } from './FilterDinner';
-import { ListPlate } from './ListPlate';
-import { useState } from 'react';
+import { FilterDinner } from './components/FilterDinner';
+import { ListPlate } from './components/ListPlate';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { useAppSelector, useAppDispatch } from 'store/hooks';
+import { fetchPlates } from './store/store';
 
 export function HomePage() {
   const bannerData = {
@@ -17,6 +19,11 @@ export function HomePage() {
     date: '05/21',
     percent: 75,
   };
+
+  const plates = useAppSelector(state => state.home.plates);
+  const dispatch = useAppDispatch();
+  const [page, setPage] = useState(0);
+  const dataFetchedRef = useRef(false);
 
   const [categories, setCategories] = useState<Array<string>>([
     'morning',
@@ -32,6 +39,24 @@ export function HomePage() {
       setCategories([...categories, category]);
     }
   };
+
+  const getFilteredPlates = useMemo(() => {
+    return plates.filter(item => categories.includes(item.category));
+  }, [categories, plates]);
+  const loadMore = () => {
+    setPage(page + 1);
+    fetchPlatesData();
+  };
+
+  const fetchPlatesData = useCallback(() => {
+    return dispatch(fetchPlates(page));
+  }, [dispatch, page]);
+
+  useEffect(() => {
+    if (dataFetchedRef.current) return;
+    dataFetchedRef.current = true;
+    fetchPlatesData();
+  }, [fetchPlatesData]);
 
   return (
     <>
@@ -53,7 +78,12 @@ export function HomePage() {
         </Col>
       </Row>
       <FilterDinner categories={categories} onSetCategory={filterCategories} />
-      <ListPlate categories={categories} />
+      <ListPlate
+        dinnerData={getFilteredPlates}
+        categories={categories}
+        onLoadMore={loadMore}
+      />
+      {/* TODO: show loading when fetching api */}
       <Footer />
     </>
   );
