@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './styles.scss';
-import { css, cx } from '@emotion/css/macro';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 export const Banner = (props: {
   img: string;
@@ -8,9 +9,6 @@ export const Banner = (props: {
   percent: number;
 }) => {
   const { img, date, percent } = props;
-  // TODO calculate circle percent to deg
-  // const leftPercent = ((100 - percent) * 360) / 100;
-  // const percentDeg = (percent * 360) / 100;
 
   return (
     <div
@@ -22,38 +20,17 @@ export const Banner = (props: {
       className="left-banner"
     >
       <div className="content">
-        <div
-          // TODO draw circle part by canvas
-          // http://www.html5canvastutorials.com/tutorials/html5-canvas-circles/
-          // http://jsfiddle.net/rpz15web/
-          className={cx(
-            'arc',
-            css`
-              border-color: transparent transparent;
-              -webkit-transform: rotate(0deg);
-              -moz-transform: rotate(0deg);
-              -ms-transform: rotate(0deg);
-              -o-transform: rotate(0deg);
-              transform: rotate(0deg);
-              box-shadow: 0px 0px 0px transparent;
-            `,
-          )}
-        ></div>
-        <div
-          className={cx(
-            'arc',
-            css`
-              border-color: transparent var(--light) var(--light) var(--light);
-              -webkit-transform: rotate(-110deg);
-              -moz-transform: rotate(-110deg);
-              -ms-transform: rotate(-110deg);
-              -o-transform: rotate(-110deg);
-              transform: rotate(-110deg);
-              box-shadow: 0px 0px 0px transparent;
-            `,
-          )}
-        ></div>
-        <div className="digit">
+        <CircularProgressbar
+          value={percent}
+          strokeWidth={6}
+          styles={buildStyles({
+            pathColor: '#FFF',
+            backgroundColor: 'transparent',
+            trailColor: 'transparent',
+          })}
+          className="circle"
+        />
+        <div className=" content-wrapper digit">
           <span className="date">{date}</span>
           <span className="percent">{percent}%</span>
         </div>
