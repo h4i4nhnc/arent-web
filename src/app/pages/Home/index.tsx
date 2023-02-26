@@ -34,7 +34,7 @@ export function HomePage() {
 
   const filterCategories = (category: string) => {
     if (categories.includes(category)) {
-      setCategories(categories.filter(x => x !== category));
+      setCategories([...categories.filter(x => x !== category)]);
     } else {
       setCategories([...categories, category]);
     }
@@ -43,6 +43,7 @@ export function HomePage() {
   const getFilteredPlates = useMemo(() => {
     return plates.filter(item => categories.includes(item.category));
   }, [categories, plates]);
+
   const loadMore = () => {
     fetchPlatesData();
   };

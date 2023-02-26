@@ -16,9 +16,9 @@ export const ListPlate = (props: {
   return (
     <div className="list-plate-container">
       <Row gutter={[0, 8]} className="list-plate">
-        {filtered.map(dish => (
+        {filtered.map((dish, index) => (
           <Col
-            key={dish.id}
+            key={`${dish.id}-${index}`}
             xs={12}
             md={6}
             lg={6}
