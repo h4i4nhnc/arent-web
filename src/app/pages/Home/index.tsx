@@ -12,7 +12,7 @@ import { ListPlate } from './components/ListPlate';
 import { ScrollTopButton } from 'app/components/Buttons/ScrollTopButton';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useAppSelector, useAppDispatch } from 'store/hooks';
-import { fetchPlates } from './store/store';
+import { fetchPlates } from './data/actions';
 
 export function HomePage() {
   const bannerData = {
@@ -21,7 +21,8 @@ export function HomePage() {
     percent: 75,
   };
 
-  const plates = useAppSelector(state => state.home.plates);
+  const { plates } = useAppSelector(state => state.home);
+  console.log('STATE:', plates);
   const dispatch = useAppDispatch();
   const [page, setPage] = useState(0);
   const dataFetchedRef = useRef(false);
