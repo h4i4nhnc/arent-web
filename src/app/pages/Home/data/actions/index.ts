@@ -13,3 +13,10 @@ export const setPlatesData = (data: Array<any>) => {
     data,
   };
 };
+
+export const setHomeLoading = (isLoading: boolean) => {
+  return {
+    type: Type.SET_HOME_LOADING,
+    isLoading,
+  };
+};
