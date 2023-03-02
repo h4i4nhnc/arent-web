@@ -3,13 +3,15 @@ import './styles.scss';
 import { Row, Col } from 'antd';
 import { cx, css } from '@emotion/css';
 import { Button } from 'app/components/Buttons/Button';
+import { LoadMore } from 'app/components/Loader/LoadMore';
 
 export const ListPlate = (props: {
+  isLoading?: Boolean;
   categories: Array<string>;
   dinnerData: Array<any>;
   onLoadMore: Function;
 }) => {
-  const { categories, dinnerData, onLoadMore } = props;
+  const { isLoading, categories, dinnerData, onLoadMore } = props;
   const filtered = dinnerData.filter(dish =>
     categories.includes(dish.category),
   );
@@ -37,6 +39,7 @@ export const ListPlate = (props: {
         ))}
       </Row>
       <Row>
+        {isLoading && <LoadMore />}
         <Button className="load-more" onClick={() => onLoadMore()}>
           記録をもっと見る
         </Button>

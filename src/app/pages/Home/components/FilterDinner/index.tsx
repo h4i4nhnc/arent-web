@@ -15,7 +15,7 @@ export const FilterDinner = (props: {
   return (
     <div className="dinner-container">
       <Row gutter={[8, 16]} className="dinner">
-        <Col xs={12} md={8} lg={6} xl={6} key="morning">
+        <Col xs={6} md={6} lg={6} xl={6} key="morning">
           <img
             src={Morning}
             alt="dinner"
@@ -23,7 +23,7 @@ export const FilterDinner = (props: {
             className={categories.includes('morning') ? 'category-active' : ''}
           />
         </Col>
-        <Col xs={12} md={8} lg={6} xl={6} key="lunch">
+        <Col xs={6} md={6} lg={6} xl={6} key="lunch">
           <img
             src={Lunch}
             alt="dinner"
@@ -31,7 +31,7 @@ export const FilterDinner = (props: {
             className={categories.includes('lunch') ? 'category-active' : ''}
           />
         </Col>
-        <Col xs={12} md={8} lg={6} xl={6} key="dinner">
+        <Col xs={6} md={6} lg={6} xl={6} key="dinner">
           <img
             src={Dinner}
             alt="dinner"
@@ -39,7 +39,7 @@ export const FilterDinner = (props: {
             className={categories.includes('dinner') ? 'category-active' : ''}
           />
         </Col>
-        <Col xs={12} md={8} lg={6} xl={6} key="snack">
+        <Col xs={6} md={6} lg={6} xl={6} key="snack">
           <img
             src={Snack}
             alt="dinner"

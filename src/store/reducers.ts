@@ -6,7 +6,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { InjectedReducersType } from 'utils/types/injector-typings';
 
-import homeReducer from 'app/pages/Home/store/store';
+import { homeReducer } from 'app/pages/Home/data/store';
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
  */

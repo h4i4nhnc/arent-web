@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-around;
     img {
+      width: 100%;
       cursor: pointer;
     }
   }
@@ -13,4 +14,5 @@
     border: 2px solid var(--primary-400);
     border-radius: 50%;
   }
+
 }
