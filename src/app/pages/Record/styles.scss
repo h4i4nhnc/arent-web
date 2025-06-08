@@ -1,9 +1,10 @@
-.body {
+.record-body {
   max-width: 1280px;
   margin-left: 160px;
   margin-right: 160px;
+  padding-top: 64px;
 
   .activities {
-    margin-top: 56px;
+    margin: 56px 0px;
   }
 }

@@ -66,7 +66,6 @@ export function HomePage() {
         <title>HomePage</title>
         <meta name="description" content="Some Content for SEO optimize" />
       </Helmet>
-      <Header />
       <div className="banner-container">
         <div className="left">
           <Banner
@@ -88,7 +87,6 @@ export function HomePage() {
       />
       {/* TODO: show loading when fetching api */}
       <ScrollTopButton />
-      <Footer />
     </>
   );
 }

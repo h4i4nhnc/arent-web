@@ -9,8 +9,7 @@ import { menuList } from 'dummy/recordData';
 export function RecordPage() {
   return (
     <>
-      <Header />
-      <div className="body">
+      <div className="record-body">
         <Row gutter={[8, 16]} className="activities">
           {menuList.map((item, index) => (
             <Col key={index} xs={24} md={8} lg={8} xl={8} className="left">
@@ -24,7 +23,6 @@ export function RecordPage() {
           ))}
         </Row>
       </div>
-      <Footer />
     </>
   );
 }
