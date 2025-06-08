@@ -1,10 +1,11 @@
 .list-plate-container {
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 152px;
+  margin-right: 152px;
 
   .dish-item {
-    width: 242px;
-    height: 234px;
+    width: 234px;
+    aspect-ratio: 1 / 1; /* 1:1 ratio */
+    overflow: hidden;
     padding-left: 4px;
     padding-right: 4px;
     position: relative;
