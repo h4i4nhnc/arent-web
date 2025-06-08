@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import './styles.scss';
-import { Header } from 'app//components/Header/Loadable';
-import { Footer } from 'app/components/Footer/Loadable';
 import { LineChart } from 'app/components/Chart/LineChart';
 import { Banner } from './components/Banner';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
@@ -75,7 +73,7 @@ export function HomePage() {
           />
         </div>
         <div className="right">
-          <LineChart />
+          <LineChart type="home" />
         </div>
       </div>
       <FilterDinner categories={categories} onSetCategory={filterCategories} />

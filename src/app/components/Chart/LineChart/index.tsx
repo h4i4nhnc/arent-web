@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import { LineChartData } from 'dummy/chartData';
+import { options, recordOptions } from './config';
 
 ChartJS.register(
   CategoryScale,
@@ -27,44 +28,9 @@ export const data = {
   datasets: LineChartData.datasets,
 };
 
-export const LineChart = () => {
-  // TODO: move data to upper level and user as props
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: false,
-      },
-      title: {
-        display: false,
-        text: 'Chart.js Line Chart',
-      },
-    },
-    scales: {
-      x: {
-        border: {
-          display: true,
-        },
-        grid: {
-          color: '#777777',
-          display: true,
-          drawOnChartArea: true,
-          drawTicks: true,
-        },
-        ticks: {
-          color: '#ffff',
-        },
-      },
-      y: {
-        border: {
-          display: false,
-        },
-        ticks: {
-          color: '#2E2E2E',
-        },
-      },
-    },
-  };
+export const LineChart = (props: { type: string }) => {
+  const { type } = props;
+  const chartOptions = type === 'record' ? recordOptions : options;
 
-  return <Line options={options} data={data} />;
+  return <Line options={chartOptions} data={data} />;
 };
