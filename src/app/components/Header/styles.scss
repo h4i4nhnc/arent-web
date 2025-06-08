@@ -1,7 +1,10 @@
 .header {
+  position: fixed;
   background-color: var(--dark);
   height: 64px;
   width: 100%;
+  max-width: 1280px;
+  z-index: 999999;
 
   .content {
     display: flex;

@@ -46,14 +46,21 @@ export const LineChart = () => {
           display: true,
         },
         grid: {
+          color: '#777777',
           display: true,
           drawOnChartArea: true,
           drawTicks: true,
+        },
+        ticks: {
+          color: '#ffff',
         },
       },
       y: {
         border: {
           display: false,
+        },
+        ticks: {
+          color: '#2E2E2E',
         },
       },
     },

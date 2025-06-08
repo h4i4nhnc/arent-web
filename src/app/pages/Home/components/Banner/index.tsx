@@ -22,7 +22,7 @@ export const Banner = (props: {
       <div className="content">
         <CircularProgressbar
           value={percent}
-          strokeWidth={6}
+          strokeWidth={2}
           styles={buildStyles({
             pathColor: '#FFF',
             backgroundColor: 'transparent',

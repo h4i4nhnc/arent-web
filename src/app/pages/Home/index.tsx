@@ -5,7 +5,6 @@ import { Header } from 'app//components/Header/Loadable';
 import { Footer } from 'app/components/Footer/Loadable';
 import { LineChart } from 'app/components/Chart/LineChart';
 import { Banner } from './components/Banner';
-import { Row, Col } from 'antd';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
 import { FilterDinner } from './components/FilterDinner';
 import { ListPlate } from './components/ListPlate';
@@ -65,21 +64,21 @@ export function HomePage() {
     <>
       <Helmet>
         <title>HomePage</title>
-        <meta name="description" content="A Boilerplate application homepage" />
+        <meta name="description" content="Some Content for SEO optimize" />
       </Helmet>
       <Header />
-      <Row gutter={[8, 16]} className="banner-container">
-        <Col xs={24} md={8} lg={8} xl={10} className="left">
+      <div className="banner-container">
+        <div className="left">
           <Banner
             img={bannerData.bgr}
             date={bannerData.date}
             percent={bannerData.percent}
           />
-        </Col>
-        <Col xs={24} md={16} lg={16} xl={14} className="right" span={10}>
+        </div>
+        <div className="right">
           <LineChart />
-        </Col>
-      </Row>
+        </div>
+      </div>
       <FilterDinner categories={categories} onSetCategory={filterCategories} />
       <ListPlate
         isLoading={isLoading}

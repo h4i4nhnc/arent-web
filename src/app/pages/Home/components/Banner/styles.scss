@@ -1,10 +1,14 @@
 .left-banner {
-  width: 100%;
-  height: 100%;
+  width: 540px;
+  height: 312px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--light);
+
+  .content {
+    position: relative;
+  }
 
   .date {
     font-size: 18px;
