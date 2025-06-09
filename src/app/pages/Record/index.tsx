@@ -6,6 +6,7 @@ import { menuList } from 'dummy/recordData';
 import { LineChart } from 'app/components/Chart/LineChart';
 import { Exercises } from './components/Exercise';
 import { DiaryList } from './components/Diary';
+import { ScrollTopButton } from 'app/components/Buttons/ScrollTopButton';
 
 export function RecordPage() {
   const exerciseDummy = Array.from({ length: 15 }, () => ({
@@ -50,6 +51,7 @@ export function RecordPage() {
         <Exercises exercises={exerciseDummy}></Exercises>
         <DiaryList diaries={diariesDummy}></DiaryList>
       </div>
+      <ScrollTopButton />
     </div>
   );
 }
