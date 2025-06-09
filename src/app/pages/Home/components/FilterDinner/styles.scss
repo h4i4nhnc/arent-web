@@ -1,18 +1,19 @@
-.dinner-container {
+.hex-container {
   margin: 25px 160px;
 
-  .dinner {
+  .hex-row {
     display: flex;
     justify-content: space-around;
-    img {
-      width: 100%;
-      cursor: pointer;
+
+    .hex-col {
+      display: inline-flex;
+      justify-content: center;
     }
   }
 
   .category-active {
-    border: 2px solid var(--primary-400);
-    border-radius: 50%;
+    // border: 2px solid var(--primary-400);
+    // border-radius: 50%;
   }
 
 }

@@ -1,0 +1,98 @@
+.exercise-log {
+  display: flex;
+  justify-content: space-between;
+  width: 416px;
+  height: 40px;
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--gray);
+
+  .content {
+    display: flex;
+    position: relative;
+    height: 40px;
+    padding-left: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    flex-direction: column;
+    padding-bottom: 2px;
+
+    .title {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 22px;
+      letter-spacing: 0.08px;
+      color: var(--light);
+    }
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background-color: var(--light);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+
+    .energy {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.08px;
+      color: var(--primary-300);
+    }
+  }
+
+  .time {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.09px;
+    color: var(--primary-300);
+  }
+}
+
+.my-exercises {
+  margin-top: 56px;
+  position: relative;
+  padding: 56px 56px 16px 24px;
+  width: 960px;
+  height: 264px;
+  overflow-y: scroll;
+  background-color: var(--secondary);
+
+  .my-title {
+    position: absolute;
+    width: 96px;
+    height: 36px;
+    top: 16px;
+    left: 24px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.15px;
+    color: var(--light);
+  }
+
+  .my-date {
+    width: 146px;
+    height: 27px;
+    top: 16px;
+    left: 120px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.11px;
+    color: var(--light);
+  }
+
+  .list-exercise {
+    padding-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px
+  }
+}

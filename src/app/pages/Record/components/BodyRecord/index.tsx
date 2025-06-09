@@ -32,7 +32,10 @@ export const BodyRecord = (props: {
           css`
             background: url(${getImgByType(image)});
             background-repeat: no-repeat;
-            background-size: 240px 240px;
+            background-size: 100% 100%;
+            overflow: hidden;
+            opacity: 0.25;
+            mix-blend-mode: luminosity;
           `,
         )}
       />

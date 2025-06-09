@@ -6,18 +6,47 @@ import Challenge from '../../../assets/icons/icon_challenge.svg';
 import Info from '../../../assets/icons/icon_info.svg';
 import Menu from '../../../assets/icons/icon_menu.svg';
 import Close from '../../../assets/icons/icon_close.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SubMenu } from './SubMenu';
 import { useNavigate } from 'react-router-dom';
+import { ScrollTopButton } from '../Buttons/ScrollTopButton';
 
 export const Header = () => {
   const [isOpenMenu, setMenu] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const toggleMenu = () => {
     setMenu(!isOpenMenu);
   };
 
+  const menuItems = [
+    { path: '/record', label: '自分の記録', icon: Memo, alt: 'memo' },
+    {
+      path: '/challenge',
+      label: 'チャレンジ',
+      icon: Challenge,
+      alt: 'challenge',
+    },
+    { path: '/notify', label: 'お知らせ', icon: Info, alt: 'info' },
+  ];
+
   const navigate = useNavigate();
-  const onGoUrl = (url: string) => navigate(`${url}`);
+  const onGoUrl = (url: string) => {
+    setActiveMenu(url);
+    navigate(`${url}`);
+  };
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+
+    if (currentPath) {
+      setActiveMenu(currentPath);
+    }
+  }, []);
+
+  const menuItemClass = (url: string) => {
+    console.log('Active Menu:', activeMenu, 'Current URL:', url);
+    return activeMenu === url ? 'is-active' : '';
+  };
 
   return (
     <div className="header">
@@ -26,23 +55,22 @@ export const Header = () => {
           <img src={Logo} alt="logo" />
         </div>
         <div className="action-list">
-          <div className="action-item" onClick={() => onGoUrl('/record')}>
-            <img src={Memo} alt="memo" />
-            <span>自分の記録</span>
-          </div>
-          <div className="action-item" onClick={() => onGoUrl('/challenge')}>
-            <img src={Challenge} alt="challenge" />
-            <span>チャレンジ</span>
-          </div>
-          <div className="action-item" onClick={() => onGoUrl('/notify')}>
-            <img src={Info} alt="info" />
-            <span>お知らせ</span>
-          </div>
+          {menuItems.map(({ path, label, icon, alt }) => (
+            <div
+              key={path}
+              className="action-item"
+              onClick={() => onGoUrl(path)}
+            >
+              <img src={icon} alt={alt} />
+              <span className={menuItemClass(path)}>{label}</span>
+            </div>
+          ))}
           <div className="action-item menu" onClick={toggleMenu}>
             <img src={isOpenMenu ? Close : Menu} alt="menu-close" />
-            {isOpenMenu && <SubMenu />}
+            {isOpenMenu && <SubMenu onGoUrl={onGoUrl} />}
           </div>
         </div>
+        <ScrollTopButton />
       </div>
     </div>
   );

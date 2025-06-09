@@ -1,9 +1,13 @@
 .header {
-  background-color: var(--dark);
+  position: fixed;
+  background-color: var(--secondary);
   height: 64px;
   width: 100%;
+  max-width: 1280px;
+  z-index: 999999;
 
   .content {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-left: 160px;
@@ -26,6 +30,10 @@
 
         span {
           margin-left: 8px;
+        }
+
+        .is-active {
+          color: var(--primary-400);
         }
       }
 
