@@ -1,7 +1,7 @@
 .scroll-to-top {
-  position: fixed;
-  top: 200px;
-  right: 96px;
+  position: absolute;
+  top: 50vh;
+  right: -120px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }

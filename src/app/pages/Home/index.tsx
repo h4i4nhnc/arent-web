@@ -6,7 +6,6 @@ import { Banner } from './components/Banner';
 import mainPhoto from 'assets/images/dummy/main_photo.jpg';
 import { FilterDinner } from './components/FilterDinner';
 import { ListPlate } from './components/ListPlate';
-import { ScrollTopButton } from 'app/components/Buttons/ScrollTopButton';
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useAppSelector, useAppDispatch } from 'store/hooks';
 import { fetchPlates, setHomeLoading } from './data/actions';
@@ -83,8 +82,6 @@ export function HomePage() {
         categories={categories}
         onLoadMore={loadMore}
       />
-      {/* TODO: show loading when fetching api */}
-      <ScrollTopButton />
     </>
   );
 }

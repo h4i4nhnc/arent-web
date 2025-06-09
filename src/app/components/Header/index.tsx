@@ -9,6 +9,7 @@ import Close from '../../../assets/icons/icon_close.svg';
 import { useEffect, useState } from 'react';
 import { SubMenu } from './SubMenu';
 import { useNavigate } from 'react-router-dom';
+import { ScrollTopButton } from '../Buttons/ScrollTopButton';
 
 export const Header = () => {
   const [isOpenMenu, setMenu] = useState(false);
@@ -69,6 +70,7 @@ export const Header = () => {
             {isOpenMenu && <SubMenu />}
           </div>
         </div>
+        <ScrollTopButton />
       </div>
     </div>
   );
