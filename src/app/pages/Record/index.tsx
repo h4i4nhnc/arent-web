@@ -5,12 +5,20 @@ import './styles.scss';
 import { menuList } from 'dummy/recordData';
 import { LineChart } from 'app/components/Chart/LineChart';
 import { Exercises } from './components/Exercise';
+import { DiaryList } from './components/Diary';
 
 export function RecordPage() {
   const exerciseDummy = Array.from({ length: 15 }, () => ({
     title: '家事全般（立位・軽い）',
     time: '10 min',
     energy: 26,
+  }));
+
+  const diariesDummy = Array.from({ length: 8 }, () => ({
+    date: '2025.06.06',
+    time: '23:35',
+    description:
+      '私の日記の記録が一部表示されます。\n テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキス',
   }));
 
   return (
@@ -40,6 +48,7 @@ export function RecordPage() {
           </div>
         </div>
         <Exercises exercises={exerciseDummy}></Exercises>
+        <DiaryList diaries={diariesDummy}></DiaryList>
       </div>
     </>
   );
