@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 
-export const SubMenu = () => {
+export const SubMenu = (props: { onGoUrl: Function }) => {
+  const { onGoUrl } = props;
+
   const listItems = [
     {
       url: '/record',
@@ -21,7 +22,7 @@ export const SubMenu = () => {
       text: '選択中のコース',
     },
     {
-      url: '/article',
+      url: '/challenge',
       text: 'コラム一覧',
     },
     {
@@ -30,15 +31,12 @@ export const SubMenu = () => {
     },
   ];
 
-  const navigate = useNavigate();
-  const goToUrl = (url: string) => navigate(`${url}`);
-
   return (
     <ul className="sub-menu-container">
       {listItems.map((item, index) => (
         <li
           key={index}
-          onClick={() => goToUrl(item.url)}
+          onClick={() => onGoUrl(item.url)}
           className="sub-menu-item"
         >
           {item.text}

@@ -67,7 +67,7 @@ export const Header = () => {
           ))}
           <div className="action-item menu" onClick={toggleMenu}>
             <img src={isOpenMenu ? Close : Menu} alt="menu-close" />
-            {isOpenMenu && <SubMenu />}
+            {isOpenMenu && <SubMenu onGoUrl={onGoUrl} />}
           </div>
         </div>
         <ScrollTopButton />
