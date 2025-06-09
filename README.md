@@ -6,21 +6,13 @@
 2. yarn start
 
 ### Progress Report
-
-#### Done
-
-- [x] header
-- [x] footer
-- [x] home page: filter by category, load more, scroll to top, routing to other page
+![image](https://github.com/user-attachments/assets/00145336-4fe3-4927-a77b-61909edee789)
 
 #### TODO
-
-- [ ] Record Page
-- [ ] Article Page (Column Page)
 - [ ] add axios
 - [ ] customize graph
 - [ ] completed responsive
 
 #### Spend Time
 
-8 hours
+18 hours
