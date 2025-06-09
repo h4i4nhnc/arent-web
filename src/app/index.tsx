@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage, RecordPage, ArticlePage } from './pages/Loadable';
+import { HomePage, RecordPage, ChallengePage } from './pages/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import { useTranslation } from 'react-i18next';
 import { Header } from './components/Header';
@@ -32,7 +32,7 @@ export function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/article" element={<ArticlePage />} />
+        <Route path="/challenge" element={<ChallengePage />} />
         <Route path="/record" element={<RecordPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

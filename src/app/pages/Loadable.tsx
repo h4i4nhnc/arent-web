@@ -14,7 +14,7 @@ export const RecordPage = lazyLoad(
   module => module.RecordPage,
 );
 
-export const ArticlePage = lazyLoad(
-  () => import('./Article/index'),
-  module => module.ArticlePage,
+export const ChallengePage = lazyLoad(
+  () => import('./Challenge/index'),
+  module => module.ChallengePage,
 );

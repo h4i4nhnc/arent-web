@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-export function ArticlePage() {
+export function ChallengePage() {
   return (
     <>
       <Helmet>
