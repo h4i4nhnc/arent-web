@@ -22,7 +22,7 @@ export function RecordPage() {
   }));
 
   return (
-    <>
+    <div className="record-page">
       <div className="record-body">
         <Row className="activities">
           {menuList.map((item, index) => (
@@ -50,6 +50,6 @@ export function RecordPage() {
         <Exercises exercises={exerciseDummy}></Exercises>
         <DiaryList diaries={diariesDummy}></DiaryList>
       </div>
-    </>
+    </div>
   );
 }
